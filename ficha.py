@@ -1,27 +1,38 @@
-def ficha():
-    """Ejercicio integrador. Lee nombre, email y 3 notas, y genera una ficha
-    de alumno aplicando: strip, title, lower, upper, int, len, find, slicing,
-    reverse, replace, count, in, f-strings, strings multilínea y operaciones matemáticas.
+from itertools import count
+
+
+def string_methods():
+    """Demuestra el uso de métodos de string: strip, lstrip, rstrip, upper, lower,
+    title, find, replace, count, operador in, slicing con paso, reverso,
+    f-strings y strings multilínea.
     """
-    # Ejercicio integrador: Generador de Ficha de Alumno
-    #
-    # Leer mediante input:
-    #   1. Nombre completo (puede tener espacios extra y mayúsculas mezcladas)
-    #   2. Email (puede tener mayúsculas)
-    #   3. Tres notas (como texto, hay que convertirlas)
-    #
-    # Generar una ficha que incluya:
-    #   - Encabezado decorativo usando un string multilínea con "="
-    #   - Nombre limpio: sin espacios extra y con formato título
-    #   - Email en minúsculas
-    #   - Cantidad de caracteres del nombre
-    #   - Iniciales: usar find para encontrar el espacio e indexar las letras
-    #   - Usuario: apellido.nombre en minúsculas
-    #   - Verificar si el email contiene @ 
-    #   - Extraer el dominio del email
-    #   - Nombre con guion bajo en vez de espacio
-    #   - Contar las 'a' en el nombre
-    #   - Código secreto: nombre invertido en mayúsculas
-    #   - Las 3 notas, su suma, promedio y promedio entero
-    #   - Cierre decorativo usando repetición de string ("=" * 24)
-    pass
+    nombre = "   Grace Hopper   "
+    frase = "Python es un gran lenguaje de programacion"
+    multilinea = """Linea 1
+    Linea 2
+    Linea 3"""
+
+    print(nombre.rstrip())
+    print(nombre.lstrip())
+    print(nombre.strip()    )
+
+    print(frase.upper())
+    print(frase.lower())
+    print(frase.title())
+    print(frase.find("gran"))
+    print(frase.replace("programacion","desarrolo"))
+    cant_a=frase.count("a")
+    print(cant_a)
+    python_frase="Python" in frase
+    java_frase="java" in frase
+    print(python_frase)
+    print(java_frase)
+    extraccion_python=frase[0:7]
+    print(extraccion_python)
+    print(extraccion_python[::2])
+    print(extraccion_python[::-1])
+    nombre_sin_espacios=nombre.strip()
+    print(f"{nombre_sin_espacios} sabe {extraccion_python}")
+    print(multilinea)
+
+string_methods()
