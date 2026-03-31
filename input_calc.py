@@ -3,3 +3,11 @@ def rectangle():
     el área y el perímetro.
     """
     pass
+    base=int(input("ingrese base del rectagulo:"))
+    altura=int(input("ingrese altura del rectagulo:"))
+    area_rectangulo=base*altura
+    perimetro_rectangulo=2*(base+altura)
+    print(area_rectangulo)
+    print(perimetro_rectangulo)
+
+rectangle()
