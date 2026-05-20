@@ -24,42 +24,53 @@ def ficha():
     #   - Código secreto: nombre invertido en mayúsculas
     #   - Las 3 notas, su suma, promedio y promedio entero
     #   - Cierre decorativo usando repetición de string ("=" * 24)
-    pass
-    print("="*24)
-    nombre_sucio=input("ingrese nombre completo:")
-    mail_sucio=input("ingrese mail:")
 
-    nota1=float(input("ingrese nota:"))
-    nota2=float(input("ingrese nota:"))
-    nota3=float(input("ingrese nota:"))
-    print(nota1)
-    print(nota2)
-    print(nota3)
-    suma=nota1+nota2+nota3
-    print(suma)
-    promedio=(nota1+nota2+nota3)/3
-    print(promedio)
-    promedio_entero=int(promedio)
-    print(promedio_entero)
+    nombre_sucio = input()
+    mail_sucio = input()
+    nota1 = int(input())
+    nota2 = int(input())
+    nota3 = int(input())
 
-    nombre_limpio=nombre_sucio.strip().title()
-    print(len(nombre_limpio)) #cant de caracteres
-    espacio_nombre=nombre_limpio.find(" ")
-    iniciales=nombre_limpio[0]+nombre_limpio[espacio_nombre+1]
-    print(iniciales)
-    apellido_minusculas=nombre_limpio[espacio_nombre+1:].lower()
-    nombre_minusculas=nombre_limpio[0:espacio_nombre].lower()
-    usuario_con_guion=f"{nombre_minusculas}_{apellido_minusculas}".title()
-    print(usuario_con_guion)
-    print(nombre_limpio.count("a"))
+    nombre = nombre_sucio.strip().title()
+    email = mail_sucio.lower()
 
-    mail_limpio=mail_sucio.lower
-    print(mail_limpio)
-    valor_at=mail_sucio.find("@")
-    dom_mail=[valor_at+1]
-    print(dom_mail)
+    espacio = nombre.find(" ")
+    inicial1 = nombre[0]
+    inicial2 = nombre[espacio + 1]
 
-    print("="*24)
+    apellido = nombre[espacio + 1:].lower()
+    nombre_lower = nombre[:espacio].lower()
+    usuario = f"{apellido}.{nombre_lower}"
+
+    dominio = email[email.find("@") + 1:]
+    nombre_archivo = nombre.replace(" ", "_")
+    cantidad_a = nombre.lower().count("a")
+    codigo_secreto = nombre[::-1].upper()
+
+    suma = nota1 + nota2 + nota3
+    promedio = suma / 3
+    promedio_entero = suma // 3
+
+    print("========================")
+    print("    FICHA DEL ALUMNO")
+    print("========================")
 
 
-ficha()
+    print(f"Nombre: {nombre}")
+    print(f"Email: {email}")
+    print(f"Caracteres en nombre: {len(nombre)}")
+    print(f"Iniciales: {inicial1}{inicial2}")
+    print(f"Usuario: {usuario}")
+    print(f"Email valido: {'@' in email}")
+    print(f"Dominio: {dominio}")
+    print(f"Nombre para archivo: {nombre_archivo}")
+    print(f"Cantidad de a: {cantidad_a}")
+    print(f"Codigo secreto: {codigo_secreto}")
+    print(f"Nota 1: {nota1}")
+    print(f"Nota 2: {nota2}")
+    print(f"Nota 3: {nota3}")
+    print(f"Suma: {suma}")
+    print(f"Promedio: {float(promedio)}")
+    print(f"Promedio entero: {promedio_entero}")
+    
+    print("=" * 24)
